@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(time julia 00-simulation.jl)",
+      "Bash(julia test/runtests.jl)",
+      "Bash(ps -eo pid,ppid,lstart,etime,command)",
+      "Bash(ps -eo pid,lstart,command)",
+      "Bash(pkill -f \"julia 00-simulation.jl\")",
+      "Bash(pkill -9 -f \"julia.*--worker\")",
+      "Bash(pkill -9 -f \"00-simulation\")",
+      "Bash(ps -eo pid,command)"
+    ],
+    "additionalDirectories": [
+      "/Users/ps/Repositories/hdl-intercept/code/MDYPL-2-supplementary"
+    ]
+  }
+}
