@@ -6,11 +6,11 @@ This directory accompanies
 
 > Sterzinger P (2026). *Proportional-limit asymptotics for
 > Diaconis–Ylvisaker-penalised logistic regression with fitted
-> intercept*. arXiv preprint: forthcoming.
+> intercept*. [arXiv preprint](https://arxiv.org/pdf/2609.09831)
 
-The arXiv link will be added when the preprint identifier is available.
+<!-- The arXiv link will be added when the preprint identifier is available.
 A compiled copy of the supplementary material is provided as
-[`hdl-supplementary.pdf`](hdl-supplementary.pdf).
+[`hdl-supplementary.pdf`](hdl-supplementary.pdf). -->
 
 # Directory structure
 
@@ -61,13 +61,14 @@ below.
 | RCall               |   0.14.9 | regression tests only            |
 
 The regression tests also call R 4.6.0 with `brglm2` 1.1.0 and `statmod`
-1.5.1. These are the versions used to verify this bundle, rather than
-declared minimum versions.
+1.5.1. 
+<!-- These are the versions used to verify this bundle, rather than -->
+<!-- declared minimum versions. -->
 
-This directory does not contain a Julia `Project.toml` or
+<!-- This directory does not contain a Julia `Project.toml` or
 `Manifest.toml`. Consequently, the packages must be available in the
 active Julia environment, and their versions are not pinned
-automatically.
+automatically. -->
 
 # Reproducing the results
 
@@ -93,7 +94,7 @@ size:
 - `settings_n<nnnn>.arrow`, `signals_n<nnnn>.arrow`, and
   `unknowns_n<nnnn>.arrow` for shared settings, signal summaries, and
   estimates of unknown population parameters.
-
+<!-- 
 The publication configuration uses ten sample sizes from 125 to 4000,
 10,000 Monte Carlo replications, five prior settings, and three tuning
 streams. It creates 180 Arrow files; the current full result set
@@ -103,7 +104,7 @@ The script starts 10 Julia worker processes and fixes BLAS to one thread
 per process. Change `num_workers` near the top of the script to suit the
 available memory and CPU resources. Julia’s [parallel-computing
 manual](https://docs.julialang.org/en/v1/manual/parallel-computing/)
-describes the `Distributed` execution model used here.
+describes the `Distributed` execution model used here. -->
 
 ## 2. Generate figures and tables
 
@@ -118,11 +119,13 @@ julia code/04-inference-tables.jl
 julia code/06-estimating-unknowns.jl
 ```
 
-The six post-processing scripts depend on the simulation output but not
+<!-- The six post-processing scripts depend on the simulation output but not
 on one another. The table records their generated artefacts by role
 rather than by figure or table number, because numbering can change
 between manuscript versions and between the combined and standalone
-supplements.
+supplements. -->
+
+The table below records their outputs. 
 
 | Script | Generated artefact | Role |
 |----|----|----|
@@ -138,7 +141,7 @@ supplements.
 |  | [`S-plr-quantiles.tex`](results/S-plr-quantiles.tex), [`S-adjusted-z-quantiles.tex`](results/S-adjusted-z-quantiles.tex) | supplementary quantiles |
 | [`06-estimating-unknowns.jl`](code/06-estimating-unknowns.jl) | [`07-response-moment-convergence.pdf`](figures/07-response-moment-convergence.pdf), [`07-state-parameter-histograms-n4000.pdf`](figures/07-state-parameter-histograms-n4000.pdf) | main-text estimation of unknown parameters |
 |  | [`S-unknowns-all-parameters-convergence.pdf`](figures/S-unknowns-all-parameters-convergence.pdf), [`S-unknowns-all-parameters-histograms-n4000.pdf`](figures/S-unknowns-all-parameters-histograms-n4000.pdf) | supplementary estimation results |
-
+<!-- 
 ## Simulation design
 
 The main constants near the top of
@@ -182,7 +185,7 @@ data:
 For a smoke run, reduce `n_values` and `reps` in `00-simulation.jl`. If
 the reduced grid omits 4000, also change `reference_n = 4000` in
 [`01-intro-plots.jl`](code/01-intro-plots.jl). If it supplies fewer than
-500 usable fits, reduce that script’s `qq_replications = 500` as well.
+500 usable fits, reduce that script’s `qq_replications = 500` as well. -->
 
 # Tests
 
@@ -192,14 +195,14 @@ Run the regression suite with
 julia test/runtests.jl
 ```
 
-The suite contains 204 tests. All 204 passed in the software environment
-recorded above.
+<!-- The suite contains 204 tests. All 204 passed in the software environment
+recorded above. -->
 
-# Maintaining this README
+<!-- # Maintaining this README
 
 [`README.qmd`](README.qmd) is the source document. Render the
 GitHub-facing [`README.md`](README.md) with
 
 ``` bash
 quarto render README.qmd
-```
+``` -->
